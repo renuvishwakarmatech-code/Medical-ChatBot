@@ -3,5 +3,7 @@ sentence-transformers
 pinecone
 langchain
 langchain-community
+langchain-pinecone
 flask
 python-dotenv
+pypdf
