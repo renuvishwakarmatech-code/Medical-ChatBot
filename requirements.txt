@@ -1,4 +1,4 @@
-ctransformers
+llama-cpp-python
 sentence-transformers
 pinecone
 langchain

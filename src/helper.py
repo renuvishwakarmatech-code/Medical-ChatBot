@@ -8,11 +8,14 @@ def load_pdf(data):
                              loader_cls=PyPDFLoader
                             )
     documents = loader.load()
+    for doc in documents:
+     doc.page_content = doc.page_content.replace("-\n", "")
+     doc.page_content = doc.page_content.replace("\n", " ")
     return documents
 
 def text_split(extracted_data):
     text_splitter = RecursiveCharacterTextSplitter(
-              chunk_size = 500 , chunk_overlap = 20
+              chunk_size = 2500 , chunk_overlap = 500
     )
     texts_chunk = text_splitter.split_documents(extracted_data)
     return texts_chunk
